@@ -2,7 +2,7 @@
 // (Not currently locale agnostic)
 var links = document.getElementsByTagName('A');
 for (var i=0; i < links.length; i++) {
-    if (links[i].textContent.indexOf('sign in with SSO') > -1) {
+    if (links[i].textContent.indexOf('Single sign-on') > -1) {
         links[i].click();  
         break;  
     }
@@ -21,5 +21,4 @@ if (url.indexOf('github.com/enterprises/')
             break;
         }
     }
-
 }
