@@ -16,7 +16,8 @@ var buttons = document.getElementsByTagName('button');
 
 for (var i = 0; i < buttons.length; i++) {
     if (buttons[i].classList.contains('btn-primary') && buttons[i].classList.contains('btn') && buttons[i].classList.contains('btn-block')) {
-        if (buttons[i].textContent.contains('Continue')) {
+        debugger;
+        if (buttons[i].textContent.indexOf('Continue') > -1) {
             buttons[i].click();
             break;
         }
