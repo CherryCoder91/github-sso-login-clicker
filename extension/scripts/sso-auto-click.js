@@ -12,14 +12,17 @@ for (var i = 0; i < links.length; i++) {
 // (Not currently locale agnostic)
 var url = window.location.toString()
 
-var buttons = document.getElementsByTagName('button');
+if (url.includes('/sso') || url.includes('/pull') ) {  
 
-for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].classList.contains('btn-primary') && buttons[i].classList.contains('btn') && buttons[i].classList.contains('btn-block')) {
-        debugger;
-        if (buttons[i].textContent.indexOf('Continue') > -1) {
-            buttons[i].click();
-            break;
+    var buttons = document.getElementsByTagName('button');
+
+    for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i].classList.contains('Button--primary') && buttons[i].classList.contains('Button')) {
+            if (buttons[i].textContent.indexOf('Continue') > -1) {
+                buttons[i].click();
+                break;
+            }
         }
     }
+
 }
