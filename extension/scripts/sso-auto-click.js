@@ -17,12 +17,17 @@ if (url.includes('/sso') || url.includes('/pull') ) {
     var buttons = document.getElementsByTagName('button');
 
     for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].classList.contains('Button--primary') && buttons[i].classList.contains('Button')) {
+
+        const isPrimaryButton = 
+        (buttons[i].classList.contains('Button--primary') && buttons[i].classList.contains('Button') ||
+        (buttons[i].classList.contains('btn-primary') && buttons[i].classList.contains('btn') && buttons[i].classList.contains('btn-block')));
+
+        if (isPrimaryButton) {
             if (buttons[i].textContent.indexOf('Continue') > -1) {
                 buttons[i].click();
                 break;
             }
         }
-    }
 
+    }
 }
